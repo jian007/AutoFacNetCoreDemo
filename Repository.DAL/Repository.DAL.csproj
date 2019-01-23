@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Dal\MyEntity.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MyEntity.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db.t4models" Version="2.6.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.14" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelsEntity\ModelsEntity.csproj" />
+    <ProjectReference Include="..\Repository.IDAL\Repository.IDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\Administrator\.nuget\packages\linq2db.mysql\2.6.3\contentFiles\any\any\LinqToDB.Templates\CopyMe.MySql.tt.txt" Link="Dal\CopyMe.MySql.tt.txt" />
+    <None Update="C:\Users\Administrator\.nuget\packages\linq2db.t4models\2.6.3\contentFiles\any\any\LinqToDB.Templates\CopyMe.MySql.tt.txt" Link="Dal\CopyMe.MySql.tt.txt" />
+    <None Update="Dal\MyEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyEntity.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
