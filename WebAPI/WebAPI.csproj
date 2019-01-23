@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModelsEntity\ModelsEntity.csproj" />
-    <ProjectReference Include="..\Repository.DAL\Repository.DAL.csproj" />
+    <ProjectReference Include="..\Repository.IDAL\Repository.IDAL.csproj" />
   </ItemGroup>
 
 </Project>

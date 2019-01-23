@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Repository.IDAL
 {
-    public interface IautofacdemoDAL:IBaseDAL<test>
+    public interface IautofacdemoDAL:IBaseDAL<Test>
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repository.DAL.Dal
 {
-    public class AutofacdemoDAL : BaseDAL<test>, IautofacdemoDAL
+    public class AutofacdemoDAL : BaseDAL<Test>, IautofacdemoDAL
     {
        
     }

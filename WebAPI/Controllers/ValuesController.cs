@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataModels;
-using LinqToDB;
-using LinqToDB.Data;
+//using DataModels;
+//using LinqToDB;
+//using LinqToDB.Data;
 using Microsoft.AspNetCore.Mvc;
 using ModelsEntity;
-using Repository.DAL;
 using Repository.IDAL;
 
 namespace WebAPI.Controllers
@@ -17,12 +16,12 @@ namespace WebAPI.Controllers
     public class ValuesController : ControllerBase
     {
 
-        //protected readonly IautofacdemoDAL iautofacdemoDAL;
+        protected readonly IautofacdemoDAL iautofacdemoDAL;
 
-        //public ValuesController(IautofacdemoDAL iautofacdemoDAL)
-        //{
-        //    this.iautofacdemoDAL = iautofacdemoDAL;
-        //}
+        public ValuesController(IautofacdemoDAL iautofacdemoDAL)
+        {
+            this.iautofacdemoDAL = iautofacdemoDAL;
+        }
 
 
         // GET api/values
@@ -30,7 +29,7 @@ namespace WebAPI.Controllers
         public ActionResult<IEnumerable<string>> Get()
         {
 
-            AutofacdemoDB BaseDbContex = new AutofacdemoDB();
+            //AutofacdemoDB BaseDbContex = new AutofacdemoDB();
           
 
 
@@ -55,10 +54,10 @@ namespace WebAPI.Controllers
             //})
 
             //批量复制数据插入数据库
-            BulkCopyRowsCopied bulkCopyRowsCopied = BaseDbContex.BulkCopy(authroles);
+            //BulkCopyRowsCopied bulkCopyRowsCopied = BaseDbContex.BulkCopy(authroles);
           //  bulkCopyRowsCopied.
 
-            return Ok(BaseDbContex.Tests.ToList());
+            return Ok();
         }
 
         // GET api/values/5
