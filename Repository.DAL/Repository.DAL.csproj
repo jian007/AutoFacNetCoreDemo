@@ -5,15 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Dal\MyEntity.generated.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MyEntity.tt</DependentUpon>
-    </None>
+    <Compile Remove="Dal\MyEntity.generated.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="linq2db.t4models" Version="2.6.3" />
+    <None Remove="Dal\MyEntity.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.14" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" />
   </ItemGroup>
@@ -26,10 +25,6 @@
   <ItemGroup>
     <None Update="C:\Users\Administrator\.nuget\packages\linq2db.mysql\2.6.3\contentFiles\any\any\LinqToDB.Templates\CopyMe.MySql.tt.txt" Link="Dal\CopyMe.MySql.tt.txt" />
     <None Update="C:\Users\Administrator\.nuget\packages\linq2db.t4models\2.6.3\contentFiles\any\any\LinqToDB.Templates\CopyMe.MySql.tt.txt" Link="Dal\CopyMe.MySql.tt.txt" />
-    <None Update="Dal\MyEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MyEntity.generated.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

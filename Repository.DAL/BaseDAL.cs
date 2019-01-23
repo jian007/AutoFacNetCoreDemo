@@ -1,5 +1,5 @@
 ﻿
-using LinqToDB;
+using Microsoft.EntityFrameworkCore;
 using ModelsEntity;
 using Repository.IDAL;
 using System;
@@ -11,18 +11,16 @@ namespace Repository.DAL
     public class BaseDAL<T> : IBaseDAL<T> where T:class
     {
 
-        //BaseDbContex BaseDbContex = new BaseDbContex();
+        BaseDbContex BaseDbContex = new BaseDbContex();
 
-       // public DbSet<T> iset { get; set; }
+        public DbSet<T> iset { get; set; }
         public BaseDAL()
         {
-            //iset = BaseDbContex.Set<T>();
+            iset = BaseDbContex.Set<T>();
         }
         IQueryable<T> IBaseDAL<T>.GetList()
         {
-            //ITable<T> ts= BaseDbContex.
-           
-            return null;
+            return iset;
         }
 
         public int AddListAsync(List<T> ts)

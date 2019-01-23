@@ -43,9 +43,6 @@ namespace WebAPI.Controllers
                
                 authroles.Add(role);
             }
-            ////BaseDbContex baseDbContex = new BaseDbContex();
-            //baseDbContex.AddRangeAsync(authroles);//这样不行
-            //baseDbContex.SaveChanges();
 
             //int count = BaseDbContex.Insert(new test()
             //{
@@ -55,9 +52,20 @@ namespace WebAPI.Controllers
 
             //批量复制数据插入数据库
             //BulkCopyRowsCopied bulkCopyRowsCopied = BaseDbContex.BulkCopy(authroles);
-          //  bulkCopyRowsCopied.
+            //  bulkCopyRowsCopied.
+            string exs = string.Empty;
+            List<Test> tests = new List<Test>();
+            try
+            {
+                tests = iautofacdemoDAL.GetList().ToList();
+            }
+            catch (Exception ex)
+            {
 
-            return Ok();
+                exs=ex.Message;
+            }
+
+            return Ok(tests.Count==0? exs: tests.ToString());
         }
 
         // GET api/values/5
