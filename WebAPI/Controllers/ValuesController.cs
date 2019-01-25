@@ -28,11 +28,6 @@ namespace WebAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-
-            //AutofacdemoDB BaseDbContex = new AutofacdemoDB();
-          
-
-
             List<Test> authroles = new List<Test>();
             Test role = null;
             for (int i = 1; i < 100; i++)
@@ -43,16 +38,7 @@ namespace WebAPI.Controllers
                
                 authroles.Add(role);
             }
-
-            //int count = BaseDbContex.Insert(new test()
-            //{
-            //    id = 2,
-            //    name = "管理员2124123"
-            //})
-
-            //批量复制数据插入数据库
-            //BulkCopyRowsCopied bulkCopyRowsCopied = BaseDbContex.BulkCopy(authroles);
-            //  bulkCopyRowsCopied.
+            
             string exs = string.Empty;
             List<Test> tests = new List<Test>();
             try
@@ -65,7 +51,7 @@ namespace WebAPI.Controllers
                 exs=ex.Message;
             }
 
-            return Ok(tests.Count==0? exs: tests.ToString());
+            return Ok(tests);
         }
 
         // GET api/values/5

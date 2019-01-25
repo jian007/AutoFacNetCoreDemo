@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using ModelsEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace Repository.DAL
              base.OnConfiguring(optionsBuilder.UseMySql(@"server=127.0.0.1;userid=root;password=root;port=3306;database=autofacdemo;allowPublicKeyRetrieval=true;Character Set=utf8;"));
             // base.OnConfiguring(optionsBuilder.UseMySql(@"sdata source=DESKTOP-JIAN\MSSQLSERVER_2;initial catalog=Autofacdemo;user id=sa;password=123"));
 
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Test>();
+            base.OnModelCreating(builder);
         }
     }
 
